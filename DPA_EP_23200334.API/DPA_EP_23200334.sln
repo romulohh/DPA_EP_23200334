@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPA_EP_23200334.API", "DPA_EP_23200334.API\DPA_EP_23200334.API.csproj", "{7045A380-8AB3-415E-8C1A-1369D3A95E36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPA_EP_23200334.CORE", "..\DPA_EP_23200334.CORE\DPA_EP_23200334.CORE.csproj", "{D8F2255A-594A-4AB3-90B5-BB07E5E17504}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7045A380-8AB3-415E-8C1A-1369D3A95E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7045A380-8AB3-415E-8C1A-1369D3A95E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7045A380-8AB3-415E-8C1A-1369D3A95E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7045A380-8AB3-415E-8C1A-1369D3A95E36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F2255A-594A-4AB3-90B5-BB07E5E17504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F2255A-594A-4AB3-90B5-BB07E5E17504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F2255A-594A-4AB3-90B5-BB07E5E17504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F2255A-594A-4AB3-90B5-BB07E5E17504}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2809C666-E660-4B87-A613-50A79DAEB742}
+	EndGlobalSection
+EndGlobal
