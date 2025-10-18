@@ -11,14 +11,15 @@ namespace DPA_EP_23200334.CORE.Core.DTOs
         public class EstudianteListDTO
         {
             public int IdEstudiante { get; set; }
-            public string Nombre { get; set; } = string.Empty;
-            public string Apellido { get; set; } = string.Empty;
+            public string Nombres { get; set; } = string.Empty;
+            public string Paterno { get; set; } = string.Empty;
+            public string Materno { get; set; } = string.Empty;
             public DateTime FechaNacimiento { get; set; }
             public string Email { get; set; } = string.Empty;
         }
         public class EstudianteCreateDTO
         {
-            public string Nombre { get; set; } = string.Empty;
+            public string Nombres { get; set; } = string.Empty;
             public string Apellido { get; set; } = string.Empty;
             public DateTime FechaNacimiento { get; set; }
             public string Email { get; set; } = string.Empty;
@@ -27,7 +28,7 @@ namespace DPA_EP_23200334.CORE.Core.DTOs
         public class EstudianteUpdateDTO
         {
             public int IdEstudiante { get; set; }
-            public string Nombre { get; set; } = string.Empty;
+            public string Nombres { get; set; } = string.Empty;
             public string Apellido { get; set; } = string.Empty;
             public DateTime FechaNacimiento { get; set; }
             public string Email { get; set; } = string.Empty;
