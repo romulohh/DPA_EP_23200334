@@ -10,7 +10,7 @@ using static DPA_EP_23200334.CORE.Core.DTOs.CarreraDTO;
 
 namespace DPA_EP_23200334.CORE.Core.Services
 {
-    public class CarreraService : ICarreraService
+    public class CarreraService
     {
         private readonly ICarrerarepository _carreraRepository;
         public CarreraService(ICarrerarepository carreraRepository)
@@ -20,7 +20,7 @@ namespace DPA_EP_23200334.CORE.Core.Services
 
         public async Task<IEnumerable<CarreraListDTO>> GetCarreras()
         {
-           var carreras = await _carreraRepository.GetCarreras();
+            var carreras = await _carreraRepository.GetCarreras();
             var carrerasDTO = new List<CarreraListDTO>();
 
             foreach (var carrera in carreras)
@@ -58,7 +58,7 @@ namespace DPA_EP_23200334.CORE.Core.Services
             await _carreraRepository.AddCarrera(carrera);
             return carrera.Id;
         }
- 
+
         public async Task<CarreraListDTO> Update(int id, CarreraCreateDTO carreraCreateDTO)
         {
             var carrera = await _carreraRepository.GetCarreraById(id);
@@ -85,5 +85,5 @@ namespace DPA_EP_23200334.CORE.Core.Services
             await _carreraRepository.DeleteCarrera(id);
             return true;
         }
-
+    }
 }

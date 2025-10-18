@@ -17,7 +17,9 @@ builder.Services.AddDbContext<UniversidadContext>(options =>
 });
 
 builder.Services.AddTransient<ICarrerarepository, Carrerarepository>();
-builder.Services.AddTransient<ICarreraService, CarreraService>();
+//builder.Services.AddTransient<ICarreraService, CarreraService>();
+builder.Services.AddTransient<IEstudianteRepository, EstudianteRepository>();
+//builder.Services.AddTransient<IEstudianteService, EstudianteService>(); 
 
 // Add services to the container.
 
