@@ -1,4 +1,23 @@
+using DPA_EP_23200334.CORE.Core.Interfaces;
+using DPA_EP_23200334.CORE.Core.Services;
+using DPA_EP_23200334.CORE.Infrastructure.Data;
+using DPA_EP_23200334.CORE.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+var _configuration = builder.Configuration;
+var _connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+
+builder.Services.AddDbContext<UniversidadContext>(options =>
+{
+    options.UseSqlServer(_connectionString);
+});
+
+builder.Services.AddTransient<ICarrerarepository, Carrerarepository>();
+builder.Services.AddTransient<ICarreraService, CarreraService>();
 
 // Add services to the container.
 

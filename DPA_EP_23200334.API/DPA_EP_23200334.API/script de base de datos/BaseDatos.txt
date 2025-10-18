@@ -1,0 +1,65 @@
+﻿CREATE DATABASE Universidad
+GO
+USE [Universidad]
+GO
+
+/****** Object:  Table [dbo].[Carrera]    Script Date: 18/10/2025 15:23:44 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Carrera](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](100) NULL,
+ CONSTRAINT [PK_Carrera] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Estudiante](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Paterno] [varchar](30) NULL,
+	[Materno] [varchar](30) NULL,
+	[Nombres] [varchar](30) NULL,
+	[FechaNacimiento] [smalldatetime] NULL,
+	[Correo] [varchar](100) NULL,
+	[CarreraId] [int] NULL,
+ CONSTRAINT [PK_Estudiante] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Estudiante]  WITH CHECK ADD  CONSTRAINT [FK_Estudiante_Carrera] FOREIGN KEY([CarreraId])
+REFERENCES [dbo].[Carrera] ([Id])
+GO
+
+ALTER TABLE [dbo].[Estudiante] CHECK CONSTRAINT [FK_Estudiante_Carrera]
+GO
+
+INSERT INTO [dbo].[Carrera] ([Nombre]) VALUES ('INGENIERIA DE SISTEMAS')
+GO
+INSERT INTO [dbo].[Carrera] ([Nombre]) VALUES ('INGENIERIA INDUSTRIAL')
+GO
+INSERT INTO [dbo].[Carrera] ([Nombre]) VALUES ('CONTABILIDAD')
+GO
+INSERT INTO [dbo].[Carrera] ([Nombre]) VALUES ('NEGOCIOS INTERNACIONALES')
+GO
+
+INSERT INTO [dbo].[Estudiante] (Paterno, Materno, Nombres, FechaNacimiento, Correo, CarreraId)
+VALUES
+('Gonzales', 'Ramos', 'Lucía', '2000-05-14', 'lucia.gonzales@example.com', 1),
+('Fernandez', 'Lopez', 'Carlos', '1999-11-23', 'carlos.fernandez@example.com', 2),
+('Ramirez', 'Torres', 'Ana', '2001-03-08', 'ana.ramirez@example.com', 3),
+('Sanchez', 'Diaz', 'Jorge', '1998-07-19', 'jorge.sanchez@example.com', 4),
+('Vargas', 'Mendoza', 'Elena', '2002-01-30', 'elena.vargas@example.com', 1),
+('Castillo', 'Morales', 'Luis', '2000-09-12', 'luis.castillo@example.com', 2),
+('Reyes', 'Cruz', 'María', '1999-06-25', 'maria.reyes@example.com', 3),
+('Ortega', 'Silva', 'Pedro', '2001-12-05', 'pedro.ortega@example.com', 4),
+('Herrera', 'Campos', 'Diana', '2000-04-17', 'diana.herrera@example.com', 1),
+('Paredes', 'Vega', 'Andrés', '1998-10-09', 'andres.paredes@example.com', 2);
